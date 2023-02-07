@@ -5,7 +5,7 @@ class ShoppingCartItem
   attr_accessor :item, :quantity, :tax, :cost
 
   def initialize(item, quantity)
-    calculated_tax = calculate_tax(item)
+    calculated_tax = calculate_tax item.base_tax_candidate?, item.imported, item.shelf_price
     @item = item
     @quantity = quantity
     @tax = calculated_tax
