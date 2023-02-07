@@ -21,15 +21,10 @@ input_3 = ["1 imported bottle of perfume at 27.99", "1 bottle of perfume at 18.9
 
 
 describe "A Receipt" do
-  let(:input_1) { parse_input(input_1) } 
-  let(:input_2) { parse_input(input_2) } 
-  let(:input_3) { parse_input(input_3) } 
   context "input 1" do
     subject { parse_input(input_1) }
     it "should list the name of all the items and their price (including tax)" do
       expect(subject).to include("1 book: 12.49", "1 music CD: 16.49", "1 chocolate bar: 0.85")
-      # expect(input_2).to include("1 imported box of chocolates: 10.50", "1 imported bottle of perfume: 54.65")
-      # expect(input_3).to include("1 imported bottle of perfume: 32.19", "1 bottle of perfume: 20.89", "1 packet of headache pills: 9.75", "3 imported boxes of chocolates: 35.55")
     end
     it "should list the total sales taxes paid" do
       expect(subject).to include("Sales Taxes: 1.50")
