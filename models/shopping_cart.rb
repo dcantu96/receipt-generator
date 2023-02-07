@@ -10,10 +10,10 @@ class ShoppingCart
   end
 
   def total_tax
-    items.inject(0) { |sum, item| sum + item.tax }
+    items.sum { |item| item.tax }
   end
 
   def total_cost
-    items.inject(0) { |sum, item| sum + item.cost }
+    items.sum { |item| item.cost }
   end
 end
